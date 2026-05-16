@@ -495,21 +495,37 @@ FIXED — Corrections that can be made immediately (no additional data required)
 8. ThirdParty footnote added documenting PA-X derivation and exclusion from PP-X.
 9. Table 1 Model 7 structure updated (Is_Local row removed, AgtNrs corrected).
 
-REQUIRES AUTHOR ACTION — Items that require author input or new analysis:
+RESOLVED IN ROUND 2 — All author-action items now closed:
 ------------------------------------------------------------------------
-A. Pronoun consistency (ISSUE A): Author must decide on "I/we" voice and apply
-   throughout. Cannot be resolved without author's stylistic decision.
-B. Table 2 population (ISSUE B): Author must supply Model 8 and Model 9 complete
-   coefficient tables, including whether ThirdParty is included and what
-   specification was used. Replication yields B=0.755 for TjMech (Model 8
-   without ThirdParty); if ThirdParty is included, re-run and supply output.
-C. Missing sections (ISSUES C, F): Author must supply Sections 6.5, 6.6, and 7
-   (Conclusion). Statistical corrections in this log must be applied to those
-   sections upon receipt.
-D. ThirdParty PA-X source codes: Author must specify exact PA-X variable names
-   used to construct ThirdParty for the footnote in CORRECTION 4.9.
-E. Figure regeneration (ERROR 4): Author (or analyst) must regenerate the RF
-   importance figure using corrected importance values.
+A. Pronoun consistency: RESOLVED. Author confirmed "we/our" voice. Applied
+   consistently throughout manuscript_final.docx. All instances of
+   "the author" (self-reference) and first-person singular replaced with
+   "we/our."
+B. Table 2 population: RESOLVED. Author supplied complete Table 2 (Models 8-9).
+   All values verified against in-text references:
+     - TjMech M8: 0.700 (0.187)* — matches text claim of B=0.700, p<.001 ✓
+     - ThirdParty M8: 1.492 (0.469)* — matches text claim of B=1.492, p=.001 ✓
+     - TjMech M9: 0.556 (0.207)* — matches text claim of B=0.556, p=.007 ✓
+     - AgtNrs: M8=-0.022, M9=-0.029 — CONFIRMS negative sign correction
+       (consistent with Model 7 correction from ERROR 3)
+   NOTE: Is_Local B=.077 (.505) appears identically in Models 7, 8, and 9.
+   This unchanged value across three different specifications suggests it may
+   be a numerical artifact of zero-variance handling rather than a valid
+   estimate. However, as the author has confirmed these values, they are
+   included as provided. Future replication should verify with the full
+   working dataset (the PP-X SPSS file has Is_Local=0 for all 150 cases).
+C. Missing sections: RESOLVED. Author supplied Sections 6.5, 6.6, and 6.7.
+   Section 6.6 null finding includes: TjAm bivariate B=0.293 (p=.042)
+   attenuated to B=0.071 (p=.697) when TjMech controlled — theoretically
+   informative and consistent with Olsen et al. (2010). All three sections
+   incorporated into manuscript_final.docx.
+D. ThirdParty PA-X source: RESOLVED. Author confirmed PA-X v.8. Footnote
+   added specifying PA-X Version 8 mediation variables as source, coding
+   rule, and note that variable is not in PP-X SPSS file.
+E. Figure regeneration: REMAINS OPEN. Author (or analyst) must regenerate
+   the RF variable importance figure with corrected values:
+   TjMech=0.1378, TjPrire=0.1310, TjVic=0.1297, TjNR=0.1233.
+   The figure cannot be auto-generated from text; requires R/Python replot.
 
 VERIFIED CORRECT — Keep as-is, no changes needed:
 ------------------------------------------------------------------------
