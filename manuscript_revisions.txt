@@ -1,0 +1,233 @@
+================================================================================
+MANUSCRIPT REVISIONS — SPECIFIC TEXT REPLACEMENTS
+Paper: "Freezing the Peace Process: How Transitional Justice During Interim
+       Stages Shapes Outcomes"
+Journal: ISQ (ISQ-2026-01-0004)
+Date: 2026-05-16
+================================================================================
+
+Instructions for use: Each entry below provides the exact original text from the
+manuscript, the corrected replacement text, the section location, and the reason.
+Apply changes in numerical order. After applying CHANGE 6 (TjGar → TjGen rename),
+verify that no residual instances of "TjGar" remain by running a global search.
+
+================================================================================
+STATISTICAL CORRECTIONS (from Step 3 / Errors 1–6)
+================================================================================
+
+--- CHANGE 1a ---
+SECTION: Section 4 (Data and Methods — Sample Description)
+ORIGINAL TEXT: "This resulted in the analytical sample of N=150 processes (N=96 ending at partial, N=54 reaching comprehensive)."
+REVISED TEXT: "This resulted in the analytical sample of N=150 processes (N=97 ending at partial, N=53 reaching comprehensive)."
+REASON: ERROR 1 — Dataset shows FPS_Binary: 0=97, 1=53. The manuscript's count of 96/54 is incorrect by one case.
+
+--- CHANGE 1b ---
+SECTION: Section 5.3 (or equivalent section describing outcome distribution)
+ORIGINAL TEXT: "N=54 processes"
+REVISED TEXT: "N=53 processes"
+REASON: ERROR 1 — Correction of off-by-one error in outcome group size throughout. Replace every standalone instance of "N=54 processes" or "54 processes" when referring to successful/comprehensive outcomes.
+
+--- CHANGE 1c ---
+SECTION: Anywhere the overall success rate is stated as a percentage approximating 36%
+ORIGINAL TEXT: [any formulation of approximately] "36.0%" or "36%" [when referring to the proportion of processes reaching comprehensive settlement]
+REVISED TEXT: "35.3%"
+REASON: ERROR 1 — Corrected denominator yields 53/150 = 35.3%, not 54/150 = 36.0%.
+
+--- CHANGE 1d ---
+SECTION: Table 3 note (group size reference)
+ORIGINAL TEXT: [any table note stating group sizes as] "n=96" and "n=54" [in the by-outcome columns]
+REVISED TEXT: "n=97" and "n=53"
+REASON: ERROR 1 — Table 3 compares TJ variable means by FPS_Binary outcome; group sizes in table note must reflect the corrected counts.
+
+--- CHANGE 2a ---
+SECTION: Table 1, Model 7 column — Is_Local row
+ORIGINAL TEXT: [Table row for Is_Local in Model 7 showing] "B=0.077, SE=0.505" [or equivalent table cell content]
+REVISED TEXT: [Delete the Is_Local row from Model 7 entirely. If table structure requires a placeholder, use an em-dash (—) with a footnote symbol.]
+REASON: ERROR 2 — Is_Local has zero variance across all 150 cases (all coded 0, with 2 missing values). A zero-variance predictor produces a singular design matrix; no valid coefficient can be estimated. Any reported coefficient is a numerical artifact.
+
+--- CHANGE 2b ---
+SECTION: Section reporting Model 7 results (likely Section 5.5 or equivalent)
+ORIGINAL TEXT: "Is_Local (B = 0.077, SE = 0.505, p > .05), which shows no variance in the sample as all processes are national or regional"
+REVISED TEXT: "Is_Local was excluded from Model 7 due to zero variance in the analytical sample: all 150 processes were coded as national or regional in scope (with two cases missing), rendering the variable a constant and precluding coefficient estimation. This exclusion does not affect the TJ coefficients; TjMech_c remains B=0.487 (SE=0.196, p<.05)."
+REASON: ERROR 2 — The original text is internally contradictory: it acknowledges zero variance while also reporting a coefficient. A zero-variance predictor cannot be included in logistic regression. The corrected text removes the impossible coefficient and documents the exclusion decision.
+
+--- CHANGE 3a ---
+SECTION: Table 1, Model 7 column — AgtNrs row
+ORIGINAL TEXT: [Table cell for AgtNrs in Model 7] "0.004 (0.012)" [or equivalent representation of B=0.004, SE=0.012]
+REVISED TEXT: "−0.021 (0.015)"
+REASON: ERROR 3 — Replication of Model 7 with Is_Local correctly excluded yields AgtNrs B=−0.021, SE=0.015. The manuscript's value has the wrong sign (+0.004 vs. −0.021) and wrong magnitude, likely caused by numerical instability from retaining the zero-variance Is_Local predictor.
+
+--- CHANGE 3b ---
+SECTION: In-text discussion of Model 7 AgtNrs result
+ORIGINAL TEXT: [any sentence describing AgtNrs direction as positive or near-zero positive, e.g.:] "AgtNrs (B = 0.004, SE = 0.012, p > .05) suggests a negligible positive association between the number of prior agreements and final settlement probability."
+REVISED TEXT: "AgtNrs (B = −0.021, SE = 0.015, p = .163) suggests a negative but non-significant association between the number of prior agreements and final settlement probability: processes with more prior partial agreements are slightly less likely to reach comprehensive settlement, though this effect does not reach conventional significance thresholds."
+REASON: ERROR 3 — Sign is reversed in the corrected model. The substantive conclusion (non-significant) is unchanged, but the direction must be reported accurately.
+
+--- CHANGE 4a ---
+SECTION: Section 6.1 (Random Forest results — importance ranking sentence)
+ORIGINAL TEXT: "TjPrire (0.1335) emerged as the most important predictor in the Random Forest model, followed by TjVic (0.1318), TjNR (0.1306), and TjMech (0.1270)."
+REVISED TEXT: "TjMech (0.1378) emerged as the most important predictor in the Random Forest model, followed by TjPrire (0.1310), TjVic (0.1297), and TjNR (0.1233)."
+REASON: ERROR 4 — 100-iteration replication yields TjMech as rank-1 predictor, not TjPrire. All four theorized provisions remain in the top four, preserving the substantive conclusion. The corrected ranking also aligns the Random Forest results with the logistic regression results (both pointing to TjMech as primary), strengthening the paper's argument.
+
+--- CHANGE 4b ---
+SECTION: Section 6.1 — any sentence attributing primacy to TjPrire in RF results
+ORIGINAL TEXT: [any sentence such as:] "Notably, TjPrire, representing prisoner release and pardon provisions, ranked above truth mechanisms (TjMech) in the Random Forest, suggesting that..."
+REVISED TEXT: "Consistently with the logistic regression results, TjMech — representing formal truth and accountability mechanisms — ranked first in the Random Forest importance scores (0.1378), followed by TjPrire (0.1310), TjVic (0.1297), and TjNR (0.1233). The convergence across methods supports the primacy of truth mechanisms in predicting process completion."
+REASON: ERROR 4 — TjMech, not TjPrire, is rank-1 in the corrected RF results. Any interpretive text premised on TjPrire being the top RF predictor must be revised.
+
+--- CHANGE 4c ---
+SECTION: Any figure caption or table title for the RF variable importance display
+ORIGINAL TEXT: [caption or title referencing TjPrire as the top predictor, or listing importance values as:] "TjPrire=0.1335, TjVic=0.1318, TjNR=0.1306, TjMech=0.1270"
+REVISED TEXT: [update to:] "TjMech=0.1378, TjPrire=0.1310, TjVic=0.1297, TjNR=0.1233"
+REASON: ERROR 4 — All numerical labels in the figure or table must reflect corrected importance values. The figure itself must be regenerated by the author/analyst.
+
+--- CHANGE 5a ---
+SECTION: Table 3 — body or note discussing non-significant variables
+ORIGINAL TEXT: [any sentence such as:] "TjCou and TjMis show negligible and non-significant differences between outcome groups."
+REVISED TEXT: "TjCou and TjMis show negligible and non-significant differences between outcome groups. However, TjVet (mean difference = +0.195, p = .019), TjRep (mean difference = +0.417, p = .016), and TjGen (mean difference = +0.457, p < .001) also show statistically significant bivariate differences by outcome, with all three provisions appearing more frequently in processes that reached comprehensive settlement."
+REASON: ERROR 5 — The original text selectively reports only non-significant bivariate findings, omitting three variables with significant differences. Incomplete reporting of bivariate results, especially when significant associations exist, is a methodological transparency issue.
+
+--- CHANGE 5b ---
+SECTION: In-text discussion of Table 3 (Section 5.2 or equivalent)
+ORIGINAL TEXT: [any paragraph discussing Table 3 that omits TjVet, TjRep, TjGen significance]
+REVISED TEXT: Add the following after the current discussion: "Notably, TjGen (general TJ commitments) shows the largest and most significant bivariate difference (mean difference = +0.457, p < .001), suggesting that processes including broadly framed TJ provisions are substantially more likely to reach comprehensive settlement. TjRep (reparation provisions; diff = +0.417, p = .016) and TjVet (vetting mechanisms; diff = +0.195, p = .019) also distinguish successful from unsuccessful processes at the bivariate level. These findings, combined with the multivariate results, underscore the importance of considering the full TJ provision portfolio, not only the specific mechanisms highlighted by prior theory."
+REASON: ERROR 5 — Significant bivariate associations must be reported. TjGen in particular is a key variable (see also ERROR 6 / CHANGE 6) and its bivariate significance is theoretically relevant.
+
+--- CHANGE 6a ---
+SECTION: ALL sections — global find and replace
+ORIGINAL TEXT: "TjGar"
+REVISED TEXT: "TjGen"
+REPLACE ALL: Yes — apply to every occurrence in the manuscript body text, footnotes, tables (column headers, table notes, table body cells), figure labels, figure captions, appendix tables (including Appendix Table A1 variable list), the reference to "general TJ commitments" variable in Section 2.3 and Section 4.2, the variable count statement, and the Random Forest importance listing.
+REASON: ERROR 6 — The actual variable name in the PP-X dataset is TjGen. The manuscript uses TjGar, which is incorrect. This naming inconsistency is likely the source of the 9-vs-10 variable discrepancy (R1.13). After this replacement, the nine TJ variables are: TjMech, TjPrire, TjVic, TjNR, TjAm, TjCou, TjVet, TjRep, TjGen.
+
+--- CHANGE 6b ---
+SECTION: Section 2.3 and/or Section 4.2 — variable list
+ORIGINAL TEXT: [variable list including "TjGar (general TJ commitments)"]
+REVISED TEXT: [variable list entry changed to] "TjGen (general TJ commitments)"
+REASON: ERROR 6 — Correct variable name. The definition ("general TJ commitments") is correct and need not change; only the variable shortcode changes.
+
+--- CHANGE 6c ---
+SECTION: Variable count statement (wherever the number of TJ variables is stated)
+ORIGINAL TEXT: [any sentence stating "ten TJ variables" or "10 TJ provision variables" or listing a count that includes both TjGar and TjGen as separate entries]
+REVISED TEXT: "nine TJ provision variables (TjMech, TjPrire, TjVic, TjNR, TjAm, TjCou, TjVet, TjRep, TjGen)"
+REASON: ERROR 6 — The 9-vs-10 discrepancy arose from TjGar and TjGen being treated as distinct variables. They are the same variable. The correct count is 9.
+
+================================================================================
+STRUCTURAL AND ARGUMENTATIVE CORRECTIONS (from Step 2 / Issues A–F)
+================================================================================
+
+--- CHANGE 7 ---
+SECTION: All sections — pronoun consistency (ISSUE A)
+ORIGINAL TEXT: [mixed usage, e.g.:] "We argue that..." [in abstract] ... "the author shows..." [in body] ... "Our dataset..." [in Section 4] ... "I employ..." [in Section 4 or 5]
+REVISED TEXT: Author must select one of the following and apply consistently:
+  OPTION 1 (first-person singular): Replace all "we/our/us" with "I/my/me" throughout.
+  OPTION 2 (editorial we): Replace all "I/my/me" and "the author" (as self-reference) with "we/our/us" throughout.
+  In either case: Remove "the author" when used as a self-reference in the manuscript body (acceptable only in the response letter, not in the submitted manuscript).
+REASON: ISSUE A — Mixed pronoun register signals incomplete editing and may appear unprofessional to reviewers. ISQ accepts both first-person singular and editorial "we" but requires consistency.
+
+--- CHANGE 8 ---
+SECTION: Table 2 (Models 8–9) — table body
+ORIGINAL TEXT: [Table 2 body is empty; table contains only:] "Note: Values are B (SE). * p<.05."
+REVISED TEXT: Author must populate Table 2 with complete coefficient output for Models 8 and 9, including: variable name, B coefficient, standard error (in parentheses), significance indicator, N, model fit statistics (−2LL or pseudo-R², Nagelkerke or McFadden). If ThirdParty is included in Model 8, the table must include its row. The note should also specify which variables are included in each model.
+REASON: ISSUE B — Table 2 body is completely empty in the reviewed manuscript. The text references specific coefficient values (e.g., TjMech B=0.700 in Model 8) that appear nowhere in the table. This is likely a typesetting loss during document conversion and must be corrected before resubmission.
+
+--- CHANGE 9 ---
+SECTION: Section 5.4 (Interaction analysis)
+ORIGINAL TEXT: [sentence reporting both SHAP and logistic regression interaction values without scale clarification, e.g.:] "The average interaction strength between TjMech and TjPrire was 0.0148, and the interaction term in Model 6 was B=0.191 (p>.05)."
+REVISED TEXT: "The average SHAP interaction value between TjMech and TjPrire was 0.0148. Separately, the logistic regression interaction term in Model 6 was B=0.191 (p>.05). Note that these two quantities are not directly comparable: SHAP interaction values reflect mean absolute log-odds contributions averaged across the sample as estimated by the Random Forest, while the logistic regression B coefficient reflects the parametric estimate of the interaction's log-odds effect in Model 6. The two values operate on different scales and are derived from different modeling approaches; both are reported here for convergent validity purposes."
+REASON: ISSUE D — The current text correctly distinguishes the two analyses but does not explicitly flag the scale incomparability. An explicit clarification prevents reviewers from questioning why the values differ by two orders of magnitude.
+
+--- CHANGE 10 ---
+SECTION: Section 4.1 or 4.2 — first mention of ThirdParty variable (ISSUE E)
+ORIGINAL TEXT: [sentence introducing ThirdParty without derivation detail, e.g.:] "Third-party involvement was present in 65.3% of processes."
+REVISED TEXT: "Third-party involvement (ThirdParty) was present in 65.3% of processes (N=98 of 150).¹
+
+[Footnote 1:] ThirdParty was derived directly from PA-X mediation variables [author must insert exact PA-X field names, e.g., 'MedInvolve' or equivalent] and coded 1 if any agreement within the process contained evidence of third-party mediator involvement, 0 otherwise. This variable was not carried into the PP-X SPSS dataset file; it was computed from the PA-X source data prior to process-level aggregation and merged for use in Models 8–9 only."
+REASON: ISSUE E — The ThirdParty variable is not present in the PP-X dataset. Transparency requires documenting its origin, coding rule, and the PA-X source fields. Reviewers or replicators who attempt to reproduce Models 8–9 from the PP-X file will be unable to do so without this information.
+
+--- CHANGE 11 ---
+SECTION: Sections 6.5, 6.6, Section 7, Policy Implications — MISSING ENTIRELY
+ORIGINAL TEXT: [No text present — manuscript ends at Section 6.4]
+REVISED TEXT: Author must supply complete text for:
+  (a) Section 6.5: Balance of power robustness checks — discussion of great-power
+      interest variable and conflict balance controls added in response to R1.4/R2.18.
+  (b) Section 6.6: "The Null Finding on Amnesties, Courts, and Vetting" —
+      explanation of why TjAm, TjCou, and TjVet show null results in multivariate
+      models despite TjAm being significant in bivariate analysis (diff=+0.412,
+      p=.041). Discuss strategic logic: amnesties may be offered under duress in
+      failing processes; courts require state capacity that stalling processes lack;
+      vetting depends on post-settlement institution-building. The null finding is
+      theoretically informative, not merely a non-result.
+  (c) Section 7 (Conclusion): Must synthesize main findings (TjMech as primary
+      predictor across both methods, N=150, logistic + RF convergence), acknowledge
+      limitations (PP-X aggregation method, missing sections on balance of power,
+      no causal identification), and state contributions to IR/TJ literatures.
+  (d) Policy Implications: Practical guidance for mediators — prioritize truth
+      mechanism language in partial agreements; TJ provisions as credible
+      commitment devices that signal process seriousness to constituencies.
+  Once supplied, apply all statistical corrections in this document (especially
+  corrected N=97/53, corrected AgtNrs direction, corrected RF rankings) to the
+  new sections as applicable.
+REASON: ISSUE F — The manuscript is structurally incomplete. Sections confirmed
+missing include 6.5, 6.6, 7, and policy implications. The paper cannot be
+resubmitted to ISQ without these sections.
+
+================================================================================
+POST-CHANGE VERIFICATION CHECKLIST
+================================================================================
+
+After applying all changes above, verify the following before resubmission:
+
+[ ] CHANGE 1a–1d: All instances of "96" (failures) → "97" and "54" (successes)
+    → "53" confirmed updated. Success rate stated as 35.3%, not 36%.
+
+[ ] CHANGE 2a–2b: Is_Local row absent from Table 1 Model 7. Text in Section 5.5
+    (or equivalent) explains exclusion. No in-text reference to Is_Local
+    coefficient B=0.077 remains.
+
+[ ] CHANGE 3a–3b: AgtNrs in Table 1 Model 7 reads −0.021 (0.015). In-text
+    direction described as "negative but non-significant." No reference to
+    B=0.004 or "positive" direction for AgtNrs in Model 7 remains.
+
+[ ] CHANGE 4a–4c: TjMech listed first in RF importance discussion with value
+    0.1378. TjPrire listed second with 0.1310. No reference to TjPrire as
+    "most important" RF predictor remains. RF figure regenerated.
+
+[ ] CHANGE 5a–5b: Table 3 discussion mentions TjVet (p=.019), TjRep (p=.016),
+    TjGen (p<.001) as significant bivariate predictors. TjGen discussed
+    substantively.
+
+[ ] CHANGE 6a–6c: Global search for "TjGar" returns zero results. "TjGen"
+    appears in all locations previously showing "TjGar." Variable count
+    reads "nine" or "9" consistently.
+
+[ ] CHANGE 7: Pronoun register is uniform throughout. No mixing of "we" and
+    "I" or "the author" (self-reference) in manuscript body.
+
+[ ] CHANGE 8: Table 2 populated with complete numerical output for Models 8–9.
+    Table note specifies variable inclusions per model.
+
+[ ] CHANGE 9: Section 5.4 contains explicit sentence clarifying that SHAP
+    values (0.0148) and logistic B (0.191) are on different scales and
+    non-comparable numerically.
+
+[ ] CHANGE 10: Footnote on ThirdParty derivation appears at first mention of
+    variable. PA-X source field names are specified in footnote.
+
+[ ] CHANGE 11: Sections 6.5, 6.6, 7, and policy implications present in full.
+    Statistical corrections applied within these sections.
+
+[ ] ADDITIONAL: Verify Table 1 Model 6 values are unchanged from verified-
+    correct versions: TjMech_c B=0.487 SE=0.196*, TjPrire_c B=0.272 SE=0.178,
+    interaction B=0.191 SE=0.154, TjVic B=0.173 SE=0.239, TjNR B=0.301
+    SE=0.234, constant B=−0.907 SE=0.329*.
+
+[ ] ADDITIONAL: Verify that all Reviewer 1 and Reviewer 2 citations are present
+    in reference list: Joshi et al. 2025, Johnson 2025, D'Amico et al. 2025,
+    Gromes & Ranft 2021, Binningsbø et al. 2012, Lundberg & Lee 2017, Sikkink,
+    Dancy & Wiebelhaus-Brahm, McAuliffe, Snyder & Vinjamuri, Kersten, Olsen
+    et al.
+
+================================================================================
+END OF MANUSCRIPT REVISIONS
+================================================================================
